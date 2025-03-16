@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whisper STT - 語音轉文字</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-microphone-alt"></i> Whisper STT</h1>
+            <p>基於 OpenAI Whisper 的語音轉文字服務</p>
+        </header>
+
+        <main>
+            <div class="upload-section">
+                <div class="upload-container" id="dropArea">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <p>拖放音頻文件到這裡或點擊選擇文件</p>
+                    <input type="file" id="fileInput" accept=".mp3,.wav,.m4a,.flac,.ogg" hidden>
+                    <button class="select-button" id="selectButton">選擇文件</button>
+                </div>
+                <div class="file-info" id="fileInfo" style="display: none;">
+                    <div class="file-details">
+                        <i class="fas fa-file-audio"></i>
+                        <span id="fileName">未選擇文件</span>
+                    </div>
+                    <button class="remove-button" id="removeButton"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+
+            <!-- YouTube鏈接輸入部分 -->
+            <div class="youtube-section">
+                <h3>或者通過YouTube鏈接</h3>
+                <div class="youtube-input">
+                    <input type="text" id="youtubeUrl" placeholder="粘貼YouTube視頻鏈接..." class="youtube-url-input">
+                    <button class="youtube-button" id="youtubeButton">
+                        <i class="fab fa-youtube"></i> 從YouTube轉錄
+                    </button>
+                </div>
+            </div>
+
+            <div class="options-section">
+                <div class="option">
+                    <label for="enableDiarization">
+                        <input type="checkbox" id="enableDiarization" checked>
+                        啟用說話者識別
+                    </label>
+                </div>
+                <div class="option">
+                    <label for="languageSelect">語言:</label>
+                    <select id="languageSelect">
+                        <option value="">自動檢測</option>
+                        <option value="zh">中文</option>
+                        <option value="en">英文</option>
+                        <option value="ja">日語</option>
+                        <option value="ko">韓語</option>
+                        <option value="fr">法語</option>
+                        <option value="de">德語</option>
+                        <option value="es">西班牙語</option>
+                        <option value="ru">俄語</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="action-section">
+                <button class="transcribe-button" id="transcribeButton" disabled>
+                    <i class="fas fa-play"></i> 開始轉錄
+                </button>
+            </div>
+
+            <div class="progress-section" id="progressSection" style="display: none;">
+                <div class="progress-container">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+                <p id="progressText">處理中... 0%</p>
+            </div>
+
+            <div class="result-section" id="resultSection" style="display: none;">
+                <div class="result-header">
+                    <h2>轉錄結果</h2>
+                    <div class="result-actions">
+                        <button id="copyButton" title="複製文本"><i class="fas fa-copy"></i></button>
+                        <button id="downloadButton" title="下載文本"><i class="fas fa-download"></i></button>
+                    </div>
+                </div>
+                <div class="result-content" id="resultContent"></div>
+            </div>
+        </main>
+
+        <footer>
+            <p>基於 <a href="https://github.com/openai/whisper" target="_blank">OpenAI Whisper</a> 和 <a href="https://fastapi.tiangolo.com/" target="_blank">FastAPI</a> 構建</p>
+        </footer>
+    </div>
+
+    <div class="toast" id="toast">
+        <div class="toast-content">
+            <i class="fas fa-check-circle"></i>
+            <span id="toastMessage">操作成功</span>
+        </div>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html> 
