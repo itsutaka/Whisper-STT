@@ -20,7 +20,7 @@ SUPPORTED_FORMATS = ["mp3", "wav", "m4a", "flac", "ogg"]
 class WhisperTranscriber:
     """使用Whisper模型进行音频转录的类"""
     
-    def __init__(self, model_name: str = "small", device: Optional[str] = None):
+    def __init__(self, model_name: str = "tiny", device: Optional[str] = None):
         """
         初始化Whisper转录器
         
