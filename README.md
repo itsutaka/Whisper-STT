@@ -98,6 +98,20 @@ pip install -r requirements.txt
 如果使用 GPU，可能需要安裝對應版本的 CUDA
 某些套件可能需要額外的系統級依賴，特別是在 Linux 系統上
 
+---
+whisper模型分成不同大小，請依照硬體選擇適當大小的模型，更改參數至transcriber.py修改
+
+```
+ def __init__(self, model_name: str = "tiny", device: Optional[str] = None):
+        """
+        初始化Whisper转录器
+        
+        Args:
+            model_name: Whisper模型名称 (tiny, base, small, medium, large)
+            device: 运行设备 (cuda, cpu)
+```
+---
+
 ## 許可證
 
 MIT
