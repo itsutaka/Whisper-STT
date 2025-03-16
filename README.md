@@ -76,21 +76,21 @@ curl -X POST http://localhost:8000/api/transcribe \
 Requires-Python <3.13,>=3.9; 3.3.1 Requires-Python <3.13,>=3.9
 
 建議在虛擬環境中安裝：
-'''bash
+```
 python -m venv venv
-'''
-'''
+```
+```
 source venv/bin/activate  # Linux/Mac
-'''
+```
 或
-'''
+```
 venv\Scripts\activate  # Windows
-'''
+```
 
 安裝所有依賴：
-'''
+```
 pip install -r requirements.txt
-'''
+```
 
 注意事項：
 需要預先安裝 FFmpeg
