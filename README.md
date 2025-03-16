@@ -2,6 +2,9 @@
 
 基於 OpenAI Whisper 和 FastAPI 的 GPU 加速語音轉文字 (STT) API，兼容 OpenAI 的 audio/transcriptions API 格式。
 
+![image](https://github.com/user-attachments/assets/e5570b7b-b20e-42ca-aa89-8d54ec81d2ca)
+
+
 ## 功能特點
 
 - 使用 Whisper small 模型進行語音轉文字
