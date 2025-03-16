@@ -34,25 +34,12 @@ cd whisper-stt-api
 ```bash
 pip install -r requirements.txt
 ```
-
-3. 设置 HuggingFace 访问令牌（用于说话者识别）：
-
-```bash
-# Linux/macOS
-export HUGGINGFACE_TOKEN=your_token_here
-
-# Windows
-set HUGGINGFACE_TOKEN=your_token_here
-```
-
-> 注意：要使用说话者识别功能，需要在 [HuggingFace](https://huggingface.co/) 上创建账号并获取访问令牌。
-
 ## 使用方法
 
 ### 启动服务器
 
 ```bash
-python -m app.main
+python .\run.py
 ```
 
 服务器将在 http://localhost:8000 上运行。
@@ -86,9 +73,24 @@ curl -X POST http://localhost:8000/api/transcribe \
 
 ## 配置
 
-可以通过环境变量配置以下选项：
+Requires-Python <3.13,>=3.9; 3.3.1 Requires-Python <3.13,>=3.9
 
-- `HUGGINGFACE_TOKEN`：HuggingFace 访问令牌，用于说话者识别
+建議在虛擬環境中安裝：
+
+python -m venv venv
+source venv/bin/activate  # Linux/Mac
+# 或
+venv\Scripts\activate  # Windows
+
+安裝所有依賴：
+
+pip install -r requirements.txt
+
+
+注意事項：
+需要預先安裝 FFmpeg
+如果使用 GPU，可能需要安裝對應版本的 CUDA
+某些套件可能需要額外的系統級依賴，特別是在 Linux 系統上
 
 ## 许可证
 
