@@ -76,7 +76,7 @@ curl -X POST http://localhost:8000/api/transcribe \
 Requires-Python <3.13,>=3.9; 3.3.1 Requires-Python <3.13,>=3.9
 
 建議在虛擬環境中安裝：
-'''
+'''bash
 python -m venv venv
 '''
 '''
