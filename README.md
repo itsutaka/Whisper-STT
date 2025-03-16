@@ -1,56 +1,57 @@
 # Whisper STT API
 
-基于 OpenAI Whisper 和 FastAPI 的 GPU 加速语音转文字 (STT) API，兼容 OpenAI 的 audio/transcriptions API 格式。
+基於 OpenAI Whisper 和 FastAPI 的 GPU 加速語音轉文字 (STT) API，兼容 OpenAI 的 audio/transcriptions API 格式。
 
-## 功能特点
+## 功能特點
 
-- 使用 Whisper small 模型进行语音转文字
-- 支持 CUDA GPU 加速
-- 支持多种音频格式（mp3、wav、m4a、flac、ogg）
-- 说话者识别 (Speaker Diarization)
-- 实时转录显示（通过 WebSocket）
-- 现代化的 Web UI 界面
+- 使用 Whisper small 模型進行語音轉文字
+- 支援 CUDA GPU 加速
+- 支援多種音訊格式（mp3、wav、m4a、flac、ogg）
+- 說話者識別 (Speaker Diarization)
+- 即時轉錄顯示（透過 WebSocket）
+- 現代化的 Web UI 介面
 - 兼容 OpenAI API 格式
 
-## 安装
+## 安裝
 
-### 前提条件
+### 前提條件
 
 - Python 3.8+
-- CUDA 支持的 GPU（可选，但推荐用于加速）
+- CUDA 支援的 GPU（可選，但推薦用於加速）
 - FFmpeg
 
-### 安装步骤
+### 安裝步驟
 
-1. 克隆仓库：
+1. 克隆倉庫：
 
 ```bash
 git clone https://github.com/yourusername/whisper-stt-api.git
 cd whisper-stt-api
 ```
 
-2. 安装依赖：
+2. 安裝依賴：
 
 ```bash
 pip install -r requirements.txt
 ```
+
 ## 使用方法
 
-### 启动服务器
+### 啟動伺服器
 
 ```bash
 python .\run.py
 ```
 
-服务器将在 http://localhost:8000 上运行。
+伺服器將在 http://localhost:8000 上運行。
 
-### Web 界面
+### Web 介面
 
-打开浏览器访问 http://localhost:8000 即可使用 Web 界面。
+打開瀏覽器訪問 http://localhost:8000 即可使用 Web 介面。
 
 ### API 使用
 
-#### 兼容 OpenAI 的 API 端点
+#### 兼容 OpenAI 的 API 端點
 
 ```bash
 curl -X POST http://localhost:8000/v1/audio/transcriptions \
@@ -59,7 +60,7 @@ curl -X POST http://localhost:8000/v1/audio/transcriptions \
   -F response_format=json
 ```
 
-#### 带有说话者识别的 API 端点
+#### 帶有說話者識別的 API 端點
 
 ```bash
 curl -X POST http://localhost:8000/api/transcribe \
@@ -67,13 +68,13 @@ curl -X POST http://localhost:8000/api/transcribe \
   -F enable_diarization=true
 ```
 
-## API 文档
+## API 文件
 
-启动服务器后，可以在 http://localhost:8000/docs 查看完整的 API 文档。
+啟動伺服器後，可以在 http://localhost:8000/docs 查看完整的 API 文件。
 
 ## 配置
 
-建議python版本 3.11
+建議 Python 版本 3.11
 
 建議在虛擬環境中安裝：
 ```
@@ -97,12 +98,13 @@ pip install -r requirements.txt
 如果使用 GPU，可能需要安裝對應版本的 CUDA
 某些套件可能需要額外的系統級依賴，特別是在 Linux 系統上
 
-## 许可证
+## 許可證
 
 MIT
 
-## 致谢
+## 致謝
 
 - [OpenAI Whisper](https://github.com/openai/whisper)
 - [FastAPI](https://fastapi.tiangolo.com/)
-- [Pyannote Audio](https://github.com/pyannote/pyannote-audio) 
+- [Pyannote Audio](https://github.com/pyannote/pyannote-audio)
+
